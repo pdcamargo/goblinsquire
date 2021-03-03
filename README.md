@@ -1,34 +1,45 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Goblin Squire Idea
 
-## Getting Started
+From a Tabletop RPG player and enthusiast and also a developer, i found myself always trying to find a perfect tool to control my games, create characters and NPCs stat blocks and etc. So, with this project, i will try my best to create a tool that fit all my needs in the next weeks.
 
-First, run the development server:
+And of course, following the idea of "we love open source", it will be everything available here in github (frontend, backend and database migration / schemas).
 
-```bash
-npm run dev
-# or
-yarn dev
+## Folders and structures
+
+All shared components, hooks, utils and etc, will be inside of `src/<type>/*`, meaning that they WILL be used in multiple places, composing a bigger component or a page.
+
+Modules are files that CAN be reused, but only within it's module. For example, if we have a module called `dungeons-and-dragon`, and a component called `StatBlock`, the path would be `src/modules/dnd/components/StatBlock` - the same for hooks, utils and etc -, it means that this stat block is specific for Dungeons and Dragon, and cannot be used anywhere else. If not, it should be inside of `src/components/*` folder.
+
+Pages components are `Next.js` specifics, it will be matched with a url following the folder structure + file name. You can read more in [routing](https://nextjs.org/docs/routing/introduction) introduction in NextJs documentation.
+
+Structure example:
+
+```
+src/
+  components/
+    Button.tsx
+  hooks/
+    useFetch.ts
+  modules/
+    dnd/
+      components/
+        StatBlock.tsx
+      hooks/
+        useStatBlock.ts
+  pages/
+    index.tsx
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Design system, themes, styling and etc
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+It will be used `styled-components` for theme rules and definitions.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+The idea is, when needed, improve the theme, with sizes, colors, spacing, etc.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Upon time, most of prop values will be following a rule. For example, a prop like `fontSize`, would be `sm | md | lg | xl | 2xl`, instead of `3rem` or `15px`.
 
-## Learn More
+## Unit testing
 
-To learn more about Next.js, take a look at the following resources:
+All tests will be inside of `__tests__` folder, and the folder structure will match `components`, `modules` and `pages`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+For example, if we have a component called `<StatBlock />`, the path would be `src/components/StatBlock`, and the test path would be `src/__tests__/components/StatBlock`. Pages and modules will follow the same nomenclature and paths.
