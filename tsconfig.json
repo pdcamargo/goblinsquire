@@ -17,11 +17,7 @@
     "paths": {
       "@components/*": ["shared/components/*"],
       "@hooks/*": ["shared/hooks/*"],
-      "@providers/*": ["shared/providers/*"],
-      "@styles/*": ["shared/styles/*"],
-      "@theme/*": ["shared/theme/*"],
-      "@theme": ["shared/theme/index.ts"],
-      "@tokens": ["shared/theme/tokens/index.ts"]
+      "@providers/*": ["shared/providers/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
