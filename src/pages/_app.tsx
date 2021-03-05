@@ -1,7 +1,24 @@
-import '../styles/globals.css'
+import { AppProps } from 'next/dist/next-server/lib/router/router';
+import { ThemeProvider } from 'styled-components';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+import TranslationProvider from '@providers/TranslationProvider';
+import CssReset from '@styles/CssReset';
+import GoblinSquireStyle from '@styles/GoblinSquireStyle';
+import theme from '@theme';
 
-export default MyApp
+const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
+  console.log(theme);
+
+  return (
+    <TranslationProvider>
+      <ThemeProvider theme={theme}>
+        <Component {...pageProps} />
+
+        <CssReset />
+        <GoblinSquireStyle />
+      </ThemeProvider>
+    </TranslationProvider>
+  );
+};
+
+export default MyApp;
