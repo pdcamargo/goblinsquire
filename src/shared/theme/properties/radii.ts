@@ -1,4 +1,4 @@
-import { BorderRadiusType } from '../types';
+import { BorderRadiusType } from '@theme/tokens/border';
 import { pixelToRem } from '../utils';
 
 const radii: Record<BorderRadiusType, string> = {

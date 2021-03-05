@@ -39,12 +39,6 @@ The idea is, when needed, improve the theme, with sizes, colors, spacing, etc.
 
 Upon time, most of prop values will be following a rule. For example, a prop like `fontSize`, would be `sm | md | lg | xl | 2xl`, instead of `3rem` or `15px`.
 
-## Unit testing
-
-All tests will be inside of `__tests__` folder, and the folder structure will match `components`, `modules` and `pages`.
-
-For example, if we have a component called `<StatBlock />`, the path would be `src/components/StatBlock`, and the test path would be `src/__tests__/components/StatBlock`. Pages and modules will follow the same nomenclature and paths.
-
 ## Internationalization
 
 All texts within the application must use the hook `useTranslation`, that returns a function called `t`.

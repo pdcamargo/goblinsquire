@@ -1,10 +1,10 @@
-type ExtraExtraSmallType = 'xxs';
-type ExtraSmallType = 'xs';
-type SmallType = 'sm';
-type MediumType = 'md';
-type LargeType = 'lg';
-type ExtraLargeType = 'xl';
-type ExtraExtraLargeType = 'xxl';
+export type ExtraExtraSmallType = 'xxs';
+export type ExtraSmallType = 'xs';
+export type SmallType = 'sm';
+export type MediumType = 'md';
+export type LargeType = 'lg';
+export type ExtraLargeType = 'xl';
+export type ExtraExtraLargeType = 'xxl';
 
 export type SizeType =
   | ExtraExtraSmallType
@@ -47,10 +47,6 @@ export type ZIndexType =
 export type ShadowType = 'none' | SmallType | MediumType | LargeType;
 
 export type SpacingType = 'auto' | 'none' | Exclude<SizeType, ExtraExtraSmallType>;
-
-export type BorderWidthType = 'none' | '0' | 'thinner' | 'thin' | 'medium' | 'thick' | 'thicker';
-
-export type BorderRadiusType = 'none' | 'full' | Exclude<SizeType, ExtraExtraSmallType | ExtraSmallType>;
 
 export type LetterSpacingType = 'tighter' | 'tight' | 'normal' | 'wide' | 'wider';
 

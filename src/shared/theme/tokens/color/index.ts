@@ -12,6 +12,7 @@ const colorCssRepresentation: CssPropsRepresentation<ColorPropsType> = {
 
 const backgroundColorCssRepresentation: CssPropsRepresentation<BackgroundColorPropsType> = {
   backgroundColor: 'background-color',
+  bgColor: 'background-color',
 };
 
 const borderColorCssRepresentation: CssPropsRepresentation<BorderColorPropsType> = {
@@ -39,4 +40,9 @@ export const backgroundColorToken = css`
 export const borderColorToken = css`
   ${(props) => generateTokenCss<BorderColorPropsType, ColorType>(props, borderColorCssRepresentation, parseColor)}
 `;
+
+export const allColorToken = css`
+  ${colorToken}${backgroundColorToken}${borderColorToken}
+`;
+
 export * from './types';

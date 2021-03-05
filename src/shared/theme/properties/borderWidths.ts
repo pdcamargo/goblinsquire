@@ -1,4 +1,4 @@
-import { BorderWidthType } from '../types';
+import { BorderWidthType } from '@theme/tokens/border';
 import { pixelToRem } from '../utils';
 
 const borderWidths: Record<BorderWidthType, string> = {
