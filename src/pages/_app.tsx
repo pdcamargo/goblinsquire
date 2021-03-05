@@ -1,10 +1,16 @@
 import { AppProps } from 'next/app';
-import { ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 
 import TranslationProvider from '@providers/TranslationProvider';
 
+const theme = extendTheme({
+  fonts: {
+    body: 'Fira Sans',
+  },
+});
+
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => (
-  <ChakraProvider resetCSS>
+  <ChakraProvider resetCSS theme={theme}>
     <TranslationProvider>
       <Component {...pageProps} />
     </TranslationProvider>
