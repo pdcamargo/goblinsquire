@@ -5,7 +5,7 @@ import TranslationProvider from '@providers/TranslationProvider';
 
 const theme = extendTheme({
   fonts: {
-    body: 'Fira Sans',
+    body: 'Roboto',
   },
 });
 
