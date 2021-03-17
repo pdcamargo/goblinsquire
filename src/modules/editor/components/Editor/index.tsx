@@ -44,7 +44,7 @@ const EditorComponent = () => {
             </Layer>
 
             <Layer>
-              {true && <Rect fill="black" width={ref?.offsetWidth} height={ref?.offsetHeight} />}
+              {false && <Rect fill="black" width={ref?.offsetWidth} height={ref?.offsetHeight} />}
 
               <EditorNodes
                 nodes={nodes}
