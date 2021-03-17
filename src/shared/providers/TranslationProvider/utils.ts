@@ -3,10 +3,11 @@ import { PopulateResources } from './types';
 export const availableLanguages = ['pt-BR', 'en-US'] as const;
 export const availableFiles = ['common'] as const;
 
-export const populateResources = () => {
+export const populateResources = async () => {
   return availableLanguages.reduce((object, language) => {
-    const resource = availableFiles.reduce((resourceObject, file) => {
-      const content = require(`../../../../locales/${language}/${file}.json`);
+    const resource = availableFiles.reduce(async (resourceObject, file) => {
+      // eslint-disable-next-line @typescript-eslint/no-var-requires
+      const content = (await import(`../../../../locales/${language}/${file}.json`)).default;
 
       return {
         ...resourceObject,
